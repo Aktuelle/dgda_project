@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Die Gewinner Debate Academie - Togo</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
     <link rel="stylesheet" href="/static/style.css">
     <!-- Link to your future CSS file -->
 </head>
@@ -36,10 +37,21 @@
 
         <!-- HERO SECTION -->
         <section id="hero">
+            <div class="hero-background">
+                <div class="hero-image"></div>
+                <div class="hero-overlay"></div>
+            </div>
             <div class="hero-content">
                 <h2>Fostering Critical Thinkers and Public Speakers in Lomé, Togo</h2>
-                <p>Transform your voice and shape your future. Join the only Togolese debate academy dedicated to nurturing confident speakers, critical thinkers, and ethical leaders. <strong>Be part of the movement.</strong></p>
-                <a href="register.html" class="cta-button">Join Us Today</a>
+                <div class="hero-subtitle">Excellence in Debate Since 2023</div>
+                <p class="hero-description">Transform your voice and shape your future. Join the only Togolese debate academy dedicated to nurturing confident speakers, critical thinkers, and ethical leaders. <strong>Be part of the movement.</strong></p>
+                <p class="hero-features">
+                    🎓 Expert Training & Mentorship<br> 🏆 Regional Tournament Experience<br> 🌍 International Debate Standards<br> 🤝 Vibrant Debate Community
+                </p>
+                <div class="hero-cta">
+                    <a href="register.html" class="cta-button primary">Join Us Today</a>
+                    <a href="#programs" class="cta-button secondary">Explore Programs</a>
+                </div>
             </div>
         </section>
 
@@ -202,31 +214,83 @@
             <div class="membership-process">
                 <h3>How to Join</h3>
                 <p>The process is simple! Fill out our registration form and attend an introductory session to get started on your journey with DGDA.</p>
-                <a href="register.html" class="cta-button">Register Now</a>
+                <div class="register-button-container">
+                    <a href="register.html" class="cta-button register-cta">Register Now</a>
+                </div>
             </div>
         </section>
 
         <!-- CONTACT SECTION -->
         <section id="contact">
-            <h2>Contact Us</h2>
-            <div class="contact-block">
-                <p>Have questions? Reach out to us!</p>
-                <form id="contact-form" method="post" action="{{ url_for('contact') }}">
-                    <label for="name">Name:</label><br>
-                    <input type="text" id="name" name="name"><br>
-                    <label for="email">Email:</label><br>
-                    <input type="email" id="email" name="email"><br>
-                    <label for="message">Message:</label><br>
-                    <textarea id="message" name="message"></textarea><br>
-                    <button type="submit">Send Message</button>
-                </form>
-            </div>
-            <div class="contact-block">
-                <h3>Our Location</h3>
-                <p>Lomé, Togo</p>
-                <!-- A map embed would go here -->
-                <div class="map-embed">
-                    <!-- Placeholder for a Google Maps iframe -->
+            <h2><i class="fas fa-envelope"></i> Contact Us</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div class="contact-text">
+                                <h4>Location</h4>
+                                <p>Lomé, Togo</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div class="contact-text">
+                                <h4>Phone</h4>
+                                <p>+228 XX XX XX XX</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div class="contact-text">
+                                <h4>Email</h4>
+                                <p>info@dgda-togo.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div class="contact-text">
+                                <h4>Office Hours</h4>
+                                <p>Monday - Friday: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="map-embed">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63520.241495050954!2d1.1811723921874919!3d6.130019999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1023e1c113185419%3A0x3224b5422caf411d!2zTG9tw6k!5e0!3m2!1sen!2s!4v1698005433411!5m2!1sen!2s"
+                            width="100%" height="100%" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="DGDA Location in Lomé, Togo">
+                        </iframe>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <div class="contact-form-header">
+                        <i class="fas fa-paper-plane"></i>
+                        <h3>Send Us a Message</h3>
+                        <p>Have questions? Reach out to us!</p>
+                    </div>
+                    <form id="contact-form" method="post" action="{{ url_for('contact') }}">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <i class="fas fa-user"></i>
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <i class="fas fa-comment-alt"></i>
+                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-button">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </section>
